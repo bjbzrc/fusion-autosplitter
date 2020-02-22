@@ -1,55 +1,62 @@
-// Autosplitter script for Metroid Fusion (JP) on BizHawk 2.4.0 by Fissiontroid
-// ToDo: Find start menu ram value
-state("EmuHawk" , "2.4.0") {
-   // "start" describes an IWRAM value at 0E28 that ties to a sound (I think)
-   // that is loaded on the frame the player presses A to start the game.
-   // "notStart" describes another IWRAM value that correlates with other sounds (maybe?),
-   // which is found at the address 0E4C.This address has a value
-   // on the frame an upgrade jingle is loaded and on the frame Samus starts
-   // turning forward at the end of the game.
+/* Autosplitter script for Metroid Fusion (JP) on BizHawk 2.4.0 by Fissiontroid
+ *
+ * This autosplitter will start LiveSplit's timer the frame the A button is pressed to start the run and
+ * stop the timer the frame the player loses control of Samus at the end.
+ *
+ * Use Dbgview.exe if you want to make sure the script detects the game.
+ */ 
 
+state("EmuHawk" , "2.4.0") {
     uint start : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE28;
-	uint notStart : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE4C;
+    uint jingle : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE4C;
+	uint soundCheck : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0x7D94;
+	uint securityCheck : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0x54F0;
 }
 
 init { 
-	print("Autosplitter is tied to game");
-	uint startCounter;
-	uint split;
+	print("\n**********Autosplitter is tied to game**********\n");
+	byte startCounter;
+	byte split;
 	vars.startCounter = 0;
-	vars.split = 0;
+	vars.split = 1;
+}
+
+startup {
+	settings.Add("ngPlus", false, "NG+");
 }
 
 start {
-	if (current.start == 16723 && vars.startCounter < 2) {
-	    vars.startCounter++;
-	    print("added 1 to start counter");
-	}
-	if (vars.startCounter == 2) {
+	// Starts the timer after one menu change if the NG+ box is unchecked
+	if (current.start == 16723 && !settings["ngPlus"]) {
+		vars.split = 1;
+		print("\n**********Timer started**********");
+		print("Split counter is: " + vars.split + "\n");
 		return true;
+	}
+	// Starts the timer after two menu changes if the NG+ box is checked
+	if (current.start == 16723 && settings["ngPlus"]) {
+		vars.startCounter += 1;
+		if (vars.startCounter == 2) {
+			print("\n**********Timer started**********");
+			print("Split counter is: " + vars.split + "\n");
+			vars.startCounter = 0;
+			return true;
+		}
 	}
 }
 
 split {
-	// Goal: split LiveSplit whenever notStart equals a jingle value
-	// (276299826 or 7340028) or the end ship value (9207808)
-	if (vars.split < 18) {
-		if (current.notStart == 276299826 || current.notStart == 7340028 ||
-	        current.notStart == 9207808) {
-	        vars.split++;
-	        print("\n\n**********Splitting**********\n\n ");
-	        return true;
-	    }
-	    if (current.notStart == 9207808) {
-	        print("Timer should be stopped");
-	    }
+	// Flag to split on the frame before the upgrade text pops on screen
+	if ((current.jingle == 2150121510) && (old.jingle == 283672616) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
+		vars.split += 1;
+	    print("\n**********Splitting**********\n");
+	    print("Split counter is: " + vars.split + "\n");
+	    return true;
 	}
-}
-
-reset {
-	// Find start menu IWRAM value and reset timer when value is hit
-	// if (menu address == value) {
-	//     return true;
-	//     print("Timer reset");
-	// }
+	// Flag to split on the frame Samus starts facing forward at the end
+	if (current.jingle == 9207808) {
+	    print("\n**********Timer should be stopped**********\n");
+		vars.split += 1;
+		return true;
+	}
 }
