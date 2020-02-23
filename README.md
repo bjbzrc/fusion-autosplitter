@@ -20,7 +20,7 @@
 
 ## New Game Plus Files:
 
-	If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+
+   If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+
 
 checkbox is checked in the script's settings in LiveSplit's Layout Editor. By default, the script
 
