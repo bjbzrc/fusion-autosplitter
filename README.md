@@ -1,6 +1,6 @@
-[h1] Fissiontroid's Metroid Fusion (JP) Autosplitter [h1]
+# Fissiontroid's Metroid Fusion (JP) Autosplitter
 
-[h2] Installation: [h2]
+## Installation:
 
 * Place the .asl file anywhere on your computer (the LiveSplit folder is a good place)
 
@@ -18,7 +18,7 @@
 
 * (Optional) Check Dbgview.exe to make sure the script is attached to EmuHawk
 
-[h2] New Game Plus Files: [h2]
+## New Game Plus Files:
 
 	If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+
 
