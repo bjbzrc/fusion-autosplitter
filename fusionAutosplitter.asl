@@ -26,6 +26,7 @@ startup {
 }
 
 start {
+	vars.split = 1;
 	// Starts the timer after one menu change if the NG+ box is unchecked
 	if (current.start == 16723 && !settings["ngPlus"]) {
 		vars.split = 1;
@@ -36,6 +37,7 @@ start {
 	// Starts the timer after two menu changes if the NG+ box is checked
 	if (current.start == 16723 && settings["ngPlus"]) {
 		vars.startCounter += 1;
+		print("\n**********Start counter at: **********" + vars.startCounter + "\n");
 		if (vars.startCounter == 2) {
 			print("\n**********Timer started**********");
 			print("Split counter is: " + vars.split + "\n");
@@ -47,8 +49,15 @@ start {
 
 split {
 	// Flag to split on the frame before the upgrade text pops on screen
-	if ((current.jingle == 2150121510) && (old.jingle == 283672616) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
+	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
 		vars.split += 1;
+	    print("\n**********Splitting**********\n");
+	    print("Split counter is: " + vars.split + "\n");
+	    return true;
+	}
+	// Alternative flag to split at Power Bombs, which has a slightly different value
+	if ((current.jingle == 2148024358) && (old.jingle != 2148024358) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
+	    vars.split += 1;
 	    print("\n**********Splitting**********\n");
 	    print("Split counter is: " + vars.split + "\n");
 	    return true;
