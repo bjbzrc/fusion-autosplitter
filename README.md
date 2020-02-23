@@ -18,6 +18,8 @@
 
 * (Optional) Check Dbgview.exe to make sure the script is attached to EmuHawk
 
+To fully reset the script, make sure the timer is started from the script's auto start and reset the timer.
+
 ## New Game Plus Files:
 
    If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+
