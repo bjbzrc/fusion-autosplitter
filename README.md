@@ -1,4 +1,5 @@
 # Fissiontroid's Metroid Fusion (JP) Autosplitter
+for BizHawk 2.4.0, mGBA 0.7.2, and Livesplit 1.7.7
 
 ### Installation:
 
@@ -16,14 +17,26 @@
 
 * Hit OK then OK again to close Layout Editor. Open EmuHawk if you haven't already
 
-* (Optional) Check Dbgview.exe to make sure the script is attached to EmuHawk
-
 To fully reset the script, make sure the timer has started from the script's auto start and reset the timer.
 
-### New Game Plus Files:
+*If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+*
 
-   If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+
+*checkbox is checked in the script's settings in LiveSplit's Layout Editor. By default, the script*
 
-checkbox is checked in the script's settings in LiveSplit's Layout Editor. By default, the script
+*is set to start from a normal game file.*
 
-is set to start from a normal game file.
+### Usage/Notes:
+
+* For now this will only fully auto split for Any% nmc and 1%, though it *can* be used for 100% if you just 
+
+manually split the cleanup sections
+
+* Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before 
+
+the upgrade text pops up, which is about when the upgrade music starts playing
+
+* The script might work with older versions of LiveSplit, but it definitely does not work with older versions
+
+of BizHawk
+
+
