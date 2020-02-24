@@ -27,16 +27,10 @@ To fully reset the script, make sure the timer has started from the script's aut
 
 ### Usage/Notes:
 
-* For now this will only fully auto split for Any% nmc and 1%, though it *can* be used for 100% if you just 
+* For now this will only fully auto split for Any% nmc and 1%, though it *can* be used for 100% if you just manually split the cleanup sections
 
-manually split the cleanup sections
+* Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before the upgrade text pops up, which is about when the upgrade music starts playing
 
-* Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before 
-
-the upgrade text pops up, which is about when the upgrade music starts playing
-
-* The script might work with older versions of LiveSplit, but it definitely does not work with older versions
-
-of BizHawk
+* The script might work with older versions of LiveSplit, but it definitely does not work with older versions of BizHawk
 
 
