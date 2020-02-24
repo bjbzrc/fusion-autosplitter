@@ -30,14 +30,14 @@ start {
 	// Starts the timer after one menu change if the NG+ box is unchecked
 	if (current.start == 16723 && !settings["ngPlus"]) {
 		vars.split = 1;
-		print("\n**********Timer started**********");
+		print("\n**********Timer started**********\n");
 		print("Split counter is: " + vars.split + "\n");
 		return true;
 	}
 	// Starts the timer after two menu changes if the NG+ box is checked
 	if (current.start == 16723 && settings["ngPlus"]) {
 		vars.startCounter += 1;
-		print("\n**********Start counter at: **********" + vars.startCounter + "\n");
+		print("\nStart counter: " + vars.startCounter + "\n");
 		if (vars.startCounter == 2) {
 			print("\n**********Timer started**********");
 			print("Split counter is: " + vars.split + "\n");
