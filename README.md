@@ -3,7 +3,7 @@ for BizHawk 2.4.0, mGBA 0.7.2, and Livesplit 1.7.7
 
 ### Installation:
 
-* Place the .asl file anywhere on your computer (the LiveSplit folder is a good place)
+* Place the .asl file anywhere on your computer (the LiveSplit Resources folder is a good place)
 
 * (Optional) Open Dbgview.exe
 
@@ -17,12 +17,10 @@ for BizHawk 2.4.0, mGBA 0.7.2, and Livesplit 1.7.7
 
 * Hit OK then OK again to close Layout Editor. Open EmuHawk if you haven't already
 
-To fully reset the script, make sure the timer has started from the script's auto start and reset the timer.
+Dbgview should spit out a message when you open EmuHawk. To fully reset the script, make sure the timer has started from the script's auto start and reset the timer.
 
 *If starting the run from a New Game Plus file (a file with a Metroid next to it), make sure the NG+*
-
 *checkbox is checked in the script's settings in LiveSplit's Layout Editor. By default, the script*
-
 *is set to start from a normal game file.*
 
 ### Usage/Notes:
