@@ -48,6 +48,7 @@ start {
 }
 
 split {
+	vars.startCounter = 0;
 	// Flag to split on the frame before the upgrade text pops on screen
 	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
 		vars.split += 1;
