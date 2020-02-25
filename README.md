@@ -3,6 +3,8 @@ for BizHawk 2.4.0, mGBA 0.7.2, and Livesplit 1.7.7
 
 ### Installation:
 
+* Go to Releases and grab the .asl file
+
 * Place the .asl file anywhere on your computer (the LiveSplit Resources folder is a good place)
 
 * (Optional) Open Dbgview.exe
