@@ -7,7 +7,7 @@ for BizHawk 2.4.0, mGBA 0.7.2, and Livesplit 1.7.7
 
 * Place the .asl file anywhere on your computer (the LiveSplit Resources folder is a good place)
 
-* (Optional) Open Dbgview.exe
+* (Optional) Grab and open [Dbgview.exe](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)
 
 * Open LiveSplit.exe, right click and hit Edit Layout
 
