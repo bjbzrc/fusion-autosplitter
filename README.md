@@ -1,5 +1,5 @@
 # Fissiontroid's Metroid Fusion (JP) Autosplitter
-for BizHawk 2.4.0, mGBA 0.7.2, and Livesplit 1.7.7
+> for [BizHawk 2.4.0](https://github.com/TASVideos/BizHawk/releases/), [mGBA 0.7.2](https://mgba.io/old.html), and [Livesplit 1.7.7](https://livesplit.org/downloads/)
 
 ### Installation:
 
