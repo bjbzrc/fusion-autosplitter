@@ -29,7 +29,7 @@ Dbgview should spit out a message when you open EmuHawk. To fully reset the scri
 
 * For now this will only fully auto split for Any% nmc and 1%, though it *can* be used for 100% if you just manually split the cleanup sections
 
-* This is still pretty bare-bones. Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before the upgrade text pops up, which is about when the upgrade music starts playing.
+* This is still pretty bare-bones. Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before the upgrade text pops up, which is about when the upgrade music starts playing
 
 * The script might work with older versions of LiveSplit, but it definitely does not work with older versions of BizHawk
 
