@@ -27,10 +27,10 @@ Dbgview should spit out a message when you open EmuHawk. To fully reset the scri
 
 ### Usage/Notes:
 
+* This script auto starts on the frame the A button is pressed to open a Main Deck file in the main menu, and the last split is set to split on the frame Samus starts facing forward
+
 * For now this will only fully auto split for Any% nmc and 1%, though it *can* be used for 100% if you just manually split the cleanup sections
 
 * This is still pretty bare-bones. Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before the upgrade text pops up, which is about when the upgrade music starts playing
 
-* The script might work with older versions of LiveSplit, but it definitely does not work with older versions of BizHawk
-
-
+* The script might work with older versions of LiveSplit, but it definitely does not work with older versions of BizHawk. It may work if you use mGBA 0.7.2 in an older BizHawk, but this is untested
