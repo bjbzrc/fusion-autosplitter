@@ -3,7 +3,7 @@
 
 ### Installation:
 
-* Go to [Releases](https://github.com/bjbzrc/fusion-autosplitter/releases) and grab the .asl file from the assets
+* Go to [Releases](https://github.com/bjbzrc/fusion-autosplitter/releases) and grab the .asl file from the assets, or just clone/copy from this page
 
 * Place the .asl file anywhere on your computer (the LiveSplit Resources folder is a good place)
 
