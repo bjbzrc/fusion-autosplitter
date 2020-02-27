@@ -7,8 +7,8 @@
  */ 
 
 state("EmuHawk" , "2.4.0") {
-    uint start : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE28;
-    uint jingle : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE4C;
+	uint start : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE28;
+	uint jingle : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0xE4C;
 	uint soundCheck : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0x7D94;
 	uint securityCheck : "mgba.dll", 0x000DB020, 0x10, 0x18, 0x1E8, 0x30, 0x54F0;
 }
@@ -52,20 +52,20 @@ split {
 	// Flag to split on the frame before the upgrade text pops on screen
 	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
 		vars.split += 1;
-	    print("\n**********Splitting**********\n");
-	    print("Split counter is: " + vars.split + "\n");
-	    return true;
+		print("\n**********Splitting**********\n");
+		print("Split counter is: " + vars.split + "\n");
+		return true;
 	}
 	// Alternative flag to split at Power Bombs, which has a slightly different value
 	if ((current.jingle == 2148024358) && (old.jingle != 2148024358) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
-	    vars.split += 1;
-	    print("\n**********Splitting**********\n");
-	    print("Split counter is: " + vars.split + "\n");
-	    return true;
+		vars.split += 1;
+		print("\n**********Splitting**********\n");
+		print("Split counter is: " + vars.split + "\n");
+		return true;
 	}
 	// Flag to split on the frame Samus starts facing forward at the end
 	if (current.jingle == 9207808) {
-	    print("\n**********Timer should be stopped**********\n");
+		print("\n**********Timer should be stopped**********\n");
 		vars.split += 1;
 		return true;
 	}
