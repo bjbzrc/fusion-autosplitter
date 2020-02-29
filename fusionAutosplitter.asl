@@ -50,18 +50,20 @@ start {
 split {
 	vars.startCounter = 0;
 	// Flag to split on the frame before the upgrade text pops on screen
-	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
-		vars.split += 1;
-		print("\n**********Splitting**********\n");
-		print("Split counter is: " + vars.split + "\n");
-		return true;
+	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (old.jingle != 1882193943)
+		&& (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
+			vars.split += 1;
+			print("\n**********Splitting**********\n");
+			print("Split counter is: " + vars.split + "\n");
+			return true;
 	}
 	// Alternative flag to split at Power Bombs, which has a slightly different value
-	if ((current.jingle == 2148024358) && (old.jingle != 2148024358) && (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
-		vars.split += 1;
-		print("\n**********Splitting**********\n");
-		print("Split counter is: " + vars.split + "\n");
-		return true;
+	if ((current.jingle == 2148024358) && (old.jingle != 2148024358) && (old.jingle != 1882193943)
+		&& (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
+			vars.split += 1;
+			print("\n**********Splitting**********\n");
+			print("Split counter is: " + vars.split + "\n");
+			return true;
 	}
 	// Flag to split on the frame Samus starts facing forward at the end
 	if (current.jingle == 9207808) {
