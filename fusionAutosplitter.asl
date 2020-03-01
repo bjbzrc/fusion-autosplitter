@@ -15,6 +15,7 @@ state("EmuHawk" , "2.4.0") {
 
 init { 
 	print("\n**********Autosplitter is tied to game**********\n");
+	refreshRate = 59.7275; // native fps of gba
 	byte startCounter;
 	byte split;
 	vars.startCounter = 0;
@@ -50,7 +51,7 @@ start {
 split {
 	vars.startCounter = 0;
 	// Flag to split on the frame before the upgrade text pops on screen
-	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (old.jingle != 1882193943)
+	if ((current.jingle == 2150121510) && (old.jingle != 2150121510) && (old.jingle != 1882193943 && old.jingle != 1882193945)
 		&& (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
 			vars.split += 1;
 			print("\n**********Splitting**********\n");
@@ -58,7 +59,7 @@ split {
 			return true;
 	}
 	// Alternative flag to split at Power Bombs, which has a slightly different value
-	if ((current.jingle == 2148024358) && (old.jingle != 2148024358) && (old.jingle != 1882193943)
+	if ((current.jingle == 2148024358) && (old.jingle != 2148024358) && (old.jingle != 1882193943 && old.jingle != 1882193945)
 		&& (current.soundCheck == 0) && (current.securityCheck != 136843920)) {
 			vars.split += 1;
 			print("\n**********Splitting**********\n");
