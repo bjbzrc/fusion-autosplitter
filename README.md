@@ -31,6 +31,8 @@ Dbgview should spit out a message when you open EmuHawk. To fully reset the scri
 
 * This script auto starts on the frame the A button is pressed to open a Main Deck file in the main menu, and the last split is set to split on the frame Samus starts facing forward
 
+* If a split is skipped, it's probably because the game and livesplit framerates aren't lined up
+
 * For now this will only fully auto split for any% (normal). It might work for memco and low%, but I haven't tested those
 
 * This is still pretty bare-bones. Esentially, this script just splits whenever you pick up a major upgrade. It splits on the frame before the upgrade text pops up, which is about when the upgrade music starts playing
