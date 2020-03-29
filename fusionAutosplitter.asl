@@ -15,7 +15,6 @@ state("EmuHawk" , "2.4.0") {
 
 init { 
 	print("\n**********Autosplitter is tied to game**********\n");
-	refreshRate = 59.7275; // native fps of gba
 	byte startCounter;
 	byte split;
 	vars.startCounter = 0;
